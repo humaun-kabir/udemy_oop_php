@@ -1,0 +1,42 @@
+<?php include "inc/header.php"; ?>
+
+
+<?php
+class UserData{
+	public $user;
+	public $userId;
+	const NAME = "sazzad hossain";
+
+	public function __construct($user,$userId){
+		$this->user = $user;
+		$this->userId = $userId;
+
+		echo "User name is : {$this->user} and User Id is : {$this->userId}";
+	}
+
+	public function display(){
+		echo "Bhai name is :".UserData::NAME;
+	}
+
+	public function __destruct(){
+		unset($this->user);
+		unset($this->userId);
+	}
+}
+
+$user = "Humaun";
+$userId = "10";
+
+$url = new UserData($user,$userId);
+echo "<br>";
+$url->display();
+
+
+?>
+
+
+
+
+
+
+<?php include "inc/footer.php"; ?>
